@@ -1,0 +1,27 @@
+# safelist
+#branches:
+#  only:
+#    - master
+language: bash
+
+services:
+  - docker
+
+before_install:
+  - docker pull hubbitus/latex
+script:
+  - docker run --rm  -it -v $(pwd):/source hubbitus/latex bash -c 'pdftex -synctex=1 -interaction=nonstopmode cv.tex; pdftex -synctex=1 -interaction=nonstopmode cvRus.tex'
+
+deploy:
+  - provider: releases
+    api_key: $TOKEN
+    file: "cv.pdf"
+    skip_cleanup: true
+    on:
+      branch: master
+  - provider: releases
+    api_key: $TOKEN
+    file: "cvRus.pdf"
+    skip_cleanup: true
+    on:
+      branch: master
