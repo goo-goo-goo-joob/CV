@@ -10,7 +10,7 @@ services:
 before_install:
   - docker pull hubbitus/latex
 script:
-  - docker run --rm  -it -v $(pwd):/source hubbitus/latex bash -c 'pdftex -synctex=1 -interaction=nonstopmode cv.tex; pdftex -synctex=1 -interaction=nonstopmode cvRus.tex; exit 0'
+  - docker run --rm  -it -v $(pwd):/source hubbitus/latex bash -c 'pdflatex -synctex=1 -interaction=nonstopmode cv.tex; xelatex -synctex=1 -interaction=nonstopmode cvRus.tex; exit 0'
 
 deploy:
   - provider: releases
