@@ -16,7 +16,20 @@
 \usepackage{tocloft}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[russian]{babel}
+\usepackage[english,russian]{babel}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref} 
+\robustify\cftdotfill
+\usepackage{xcolor}
+\usepackage{hyperref} 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
 
 %-----------------------------------------------------------
 %Edit these values as you see fit
@@ -66,7 +79,7 @@
 \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
 \textbf{\Large Самоделкина Мария} & \textbf{\today} \\
 20 лет, Москва & E-mail: samodelkina.m.v@yandex.ru \\
-& GitHub: https://github.com/goo-goo-goo-joob \\
+& GitHub: \url{https://github.com/goo-goo-goo-joob} \\
 & Tel: +7(985) 733-61-91 \\
 \end{tabular*}
 \\
@@ -98,7 +111,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
  \item Языки программирования:  C++(11), Python (pandas, numpy, scikit-learn), Wolfram Mathematica, C, Assembler
- \item Программы: LaTeX, SAS Enterprise Miner, КОМПАС-3D, COMSOL Multiphysics, Git, Ubuntu, MS Office
+ \item Программы: LaTeX, Git, Ubuntu, MS Office
  \item Владения языками: English (upper intermediate)
 \end{itemize}
 
@@ -113,22 +126,23 @@
 \resheading{Проекты}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
- \item Проведение исследования источника данных и предобработки данных
- \item Легковесная криптография
+ \item \href{https://github.com/goo-goo-goo-joob/IDA-HW/blob/master/hw4/homework_04_%D0%A1%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%BA%D0%B8%D0%BD%D0%B0_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F.ipynb}{Анализ кредитных рисков в Python} (определение платежеспособности клиента): обучение модели (градиентный бустинг), подбор оптимальных параметров алгоритмов, работа с категориальными признаками, определение важности признаков, визуализация.
+\item \href{https://github.com/goo-goo-goo-joob/IDA-HW/blob/master/hw3/homework_03_%D0%A1%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%BA%D0%B8%D0%BD%D0%B0_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F.ipynb}{Анализ текстовых данных в Python} (определение типа источника данных по тексту документа): обработка первичных данных, обучение модели (логистическая регрессия) и оценка результатов.	
+ \item Проведение исследования источника данных и предобработки данных: определение факторов, влияющих на уровень дохода, с помощью программы SAS Enterprice Miner; анализ взаимосвязей переменных посредством построения графиков; создание модели (дерева решений), описывающей поведение целевой переменной.
+ \item Легковесная криптография: изучение алгоритмов легковесной криптографии, анализ литературы, отчет "Хэш-функции в легковесной криптографии". 
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Дополнительная информация}
+%\resheading{Дополнительная информация}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\vspace{-2pt}
-	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
-		\multicolumn{2}{c}{Музыкальная школа № 1, Глазов (флейта, гитара) \cftdotfill{\cftdotsep} 2006-2016}\\
-        \multicolumn{2}{c}{The Mackenzie School of English, Edinburgh \cftdotfill{\cftdotsep} 2015, 2016}\\
-		\vphantom{E}
-		\multicolumn{2}{c}{Волонтерская работа, Глазов, Москва \cftdotfill{\cftdotsep} 2016-2018}\\
-		\vphantom{E}
-\end{tabular*}
-\end{center}\vspace*{-16pt}
+%	\vspace{-2pt}
+%	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
+%		\multicolumn{2}{c}{Музыкальная школа № 1, Глазов (флейта, гитара) \cftdotfill{\cftdotsep} 2006-2016}\\
+%       \multicolumn{2}{c}{The Mackenzie School of English, Edinburgh \cftdotfill{\cftdotsep} 2015, 2016}\\
+%		\multicolumn{2}{c}{Волонтерская работа, Глазов, Москва \cftdotfill{\cftdotsep} 2016-2018}\\
+%		\vphantom{E}
+%\end{tabular*}
+%\end{center}\vspace*{-16pt}
 
 
 \end{document}
