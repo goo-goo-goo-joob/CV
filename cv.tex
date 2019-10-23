@@ -14,6 +14,22 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{framed}
 \usepackage{tocloft}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tocloft}
+\usepackage{etoolbox}
+\usepackage[hidelinks]{hyperref} 
+\robustify\cftdotfill
+\usepackage{xcolor}
+\usepackage{hyperref} 
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
 
 %-----------------------------------------------------------
 %Edit these values as you see fit
@@ -44,17 +60,17 @@
 %Custom commands
 \newcommand{\resitem}[1]{\item #1 \vspace{-2pt}}
 \newcommand{\resheading}[1]{\vspace{8pt}
-  \parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
-    \begin{shaded}
-\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
-    \end{shaded}
-  }\vspace{-5pt}
+	\parbox{\textwidth}{\setlength{\FrameSep}{\outerbordwidth}
+		\begin{shaded}
+			\setlength{\fboxsep}{0pt}\framebox[\textwidth][l]{\setlength{\fboxsep}{4pt}\fcolorbox{shadecolorB}{shadecolorB}{\textbf{\sffamily{\mbox{~}\makebox[6.762in][l]{\large #1} \vphantom{p\^{E}}}}}}
+		\end{shaded}
+	}\vspace{-5pt}
 }
 \newcommand{\ressubheading}[4]{
-\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
+	\begin{tabular*}{6.5in}{l@{\cftdotfill{\cftsecdotsep}\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
 		\textit{#3} & \textit{#4} \\
-\end{tabular*}\vspace{-6pt}}
+	\end{tabular*}\vspace{-6pt}}
 %-----------------------------------------------------------
 
 
@@ -63,7 +79,7 @@
 \begin{tabular*}{7in}{l@{\extracolsep{\fill}}r}
 \textbf{\Large Samodelkina Mariia} & \textbf{\today} \\
 20 y.o., Moscow & E-mail: samodelkina.m.v@yandex.ru \\
-& GitHub: https://github.com/goo-goo-goo-joob \\
+& GitHub: \url{https://github.com/goo-goo-goo-joob}\\
 & Tel: +7(985) 733-61-91 \\
 \end{tabular*}
 \\
@@ -95,41 +111,44 @@
 \resheading{Professional skills}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
- \item Computer languages:  C++(11), Python (pandas, numpy, scikit-learn), Wolfram Mathematica, C, Assembler
- \item Software: LaTeX, SAS Enterprise Miner, KOMPAS-3D, COMSOL Multiphysics, Git, Ubuntu, MS Office
+ \item Computer languages:  C++(11), Python (pandas, numpy, scikit-learn, tensorflow, keras), Wolfram Mathematica, C, Assembler
+ \item Software: LaTeX, SQL, Git, Unix, MS Office
  \item Languages: Russian (native speaker), English (upper intermediate)
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Experience}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\vspace{-2pt}
-	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
-		\multicolumn{2}{c}{Research Intern in the research laboratory of telecommunication systems MIEM HSE \cftdotfill{\cftdotsep} 2018-2019}\\
-		\vphantom{E}
-\end{tabular*}
-\end{center}\vspace*{-16pt}
+\begin{itemize}
+	\item Research Intern in the research laboratory of telecommunication systems MIEM HSE \cftdotfill{\cftdotsep} 2018-2019
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\resheading{Minor}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+	\item Intellectual data analisys:
+	\begin{itemize}
+		\resitem {Lineral models, decision trees, quality mertics}
+		\resitem {Neural Networks, Deep Learning for images}
+		\resitem {Optimization methods, probavility theory, statistical estimation}
+	\end{itemize}
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \resheading{Projects}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{itemize}
- \item The study of data source and data preprocessing
- \item Lightweight cryptography
+ \item \href{https://credit-risks.asciishell.ru/}{A software module for credit risk management of the Bank} - team project. My role: team leader, maths resarch, programming (logistic regression).
+ \item \href{https://github.com/goo-goo-goo-joob/IDA-HW/blob/master/hw4/homework_04_%D0%A1%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%BA%D0%B8%D0%BD%D0%B0_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F.ipynb} {Credit risk analysis in Python} (determination of client's  paying capacity): training models (gradient boosting), selection of optimal parameters of algorithms, working with categorical features, determining the importance of features, visualization.
+ \item \href{https://github.com/goo-goo-goo-joob/IDA-HW/blob/master/hw3/homework_03_%D0%A1%D0%B0%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D0%BA%D0%B8%D0%BD%D0%B0_%D0%9C%D0%B0%D1%80%D0%B8%D1%8F.ipynb} {Text data analisys in Python} (determining the type of data source by text document): data preprocessing, model training (logistic regression) and
+ evaluation of results.
+ \item Data source research and data preprocessing: determining factors which
+ impact on the level of income with the help of SAS enterprise Miner; analysis of the relationships of variables by plotting; creating a model (decision trees), describing the behavior of the target variable.
+ \item Lightweight cryptography: study of lightweight cryptography algorithms, analysis of scientific literature, the report "Hash functions in lightweight cryptography".
 \end{itemize}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\resheading{Miscellaneous}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-	\vspace{-2pt}
-	\begin{center}\begin{tabular*}{6.6in}{l@{\extracolsep{\fill}}r}
-\multicolumn{2}{c}{Music school no.1, Glazov (flute, guitar) \cftdotfill{\cftdotsep} 2006-2016}\\
-\multicolumn{2}{c}{The Mackenzie School of English, Edinburgh \cftdotfill{\cftdotsep} 2015, 2016}\\
-\vphantom{E}
-\multicolumn{2}{c}{Volunteer work, Glazov, Moscow \cftdotfill{\cftdotsep} 2016-2018}\\
-		\vphantom{E}
-\end{tabular*}
-\end{center}\vspace*{-16pt}
+\vspace*{-16pt}
 
 
 \end{document}
